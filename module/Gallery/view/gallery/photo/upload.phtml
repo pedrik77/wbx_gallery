@@ -1,0 +1,24 @@
+<?php
+$photoFile = $this->form->get('photo');
+$photoFile->setAttribute('class', 'form-control');
+
+$submit = $this->form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$this->form->setAttribute('action', $this->url('photo', ['action' => 'upload']));
+$this->form->prepare();
+
+echo $this->form()->openTag($this->form);
+?>
+<fieldset>
+    <div class="form-group">
+        <?= $this->formLabel($photoFile) ?>
+        <?= $this->formFile($photoFile) ?>
+        <?= $this->formElementErrors($photoFile) ?>
+    </div>
+</fieldset>
+<?php
+echo $this->formSubmit($submit);
+echo $this->form()->closeTag();
+
+$this->form()->closeTag() ?>

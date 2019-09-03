@@ -1,0 +1,16 @@
+<a href="<?= $this->url('photo', ['action' => 'upload']) ?>">
+    <button>
+        Upload image
+    </button>
+</a>
+
+<div class="photos">
+    <?php foreach ($this->photos as $photo) : ?>
+        <a href="<?= $photo['fullpath'] ?>">
+            <img src="<?= $photo['fullpath'] ?>" width="150" height="100">
+        </a>
+        <a href="<?= $this->url('photo', ['action' => 'delete', 'path' => $photo['path']]) ?>">
+            x
+        </a>
+    <?php endforeach ?>
+</div>
