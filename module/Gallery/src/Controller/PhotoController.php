@@ -52,7 +52,7 @@ class PhotoController extends AbstractActionController
                 return $return;
             }
         } catch (RuntimeException $e) {
-            $request['message'] = $e->getMessage();
+            $return['message'] = $e->getMessage();
             return $return;
         }
 

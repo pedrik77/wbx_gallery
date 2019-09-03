@@ -11,7 +11,7 @@ $this->form->prepare();
 echo $this->form()->openTag($this->form);
 ?>
 <?php if ($this->message) : ?>
-    <div>
+    <div class="alert alert-danger">
         <?= $this->message ?>
     </div>
 <?php endif ?>
