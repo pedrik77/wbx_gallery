@@ -30,7 +30,7 @@ class PhotoController extends AbstractActionController
     public function uploadAction()
     {
         $request = $this->getRequest();
-        $return = ['form' => $this->uploadForm];
+        $return = ['form' => $this->uploadForm, 'message' => null];
 
         if (!$request->isPost()) {
             return $return;
@@ -52,6 +52,7 @@ class PhotoController extends AbstractActionController
                 return $return;
             }
         } catch (RuntimeException $e) {
+            $request['message'] = $e->getMessage();
             return $return;
         }
 

@@ -10,6 +10,11 @@ $this->form->prepare();
 
 echo $this->form()->openTag($this->form);
 ?>
+<?php if ($this->message) : ?>
+    <div>
+        <?= $this->message ?>
+    </div>
+<?php endif ?>
 <fieldset>
     <div class="form-group">
         <?= $this->formLabel($photoFile) ?>
